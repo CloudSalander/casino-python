@@ -34,8 +34,15 @@ def useOption(option):
     elif "wins":
         changeBenefits(input)
 
+def printResults():
+    print("------------------")
+    for player,benefit in players.items():
+        print(player+" is winning "+str(benefit))
+
+
 while option != "" :
     useOption(option)
     option = input()
 
 
+printResults()
