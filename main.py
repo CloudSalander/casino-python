@@ -18,6 +18,12 @@ def leaveCasino(input):
         players.pop(input[0])
     else:
         print(input[0]+" is not in the casino")
+    
+def changeBenefits(input):
+    if input[0] in players:
+        players[input[0]] = players[input[0]] + int(input[2])
+    else:
+        print(input[0]+" is not in the casino")
 
 def useOption(option):
     input = option.split()
@@ -25,9 +31,11 @@ def useOption(option):
         enterCasino(input)
     elif "leaves" in input[1]:
         leaveCasino(input)
+    elif "wins":
+        changeBenefits(input)
 
 while option != "" :
     useOption(option)
     option = input()
 
-print(players)
+
